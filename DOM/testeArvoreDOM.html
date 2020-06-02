@@ -1,0 +1,50 @@
+<hmtl>
+    <head>
+        <meta charset="UTF-8">
+        <title>Teste DOM</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name="nome" id="idNome"/>
+            <input type="text" name="nome2" id="idNome2"/>
+            <button class="botao">Botao</button>
+        </div>
+
+        <script>
+
+            //document referencia a arvore DOM do arquivo
+
+            //obtendo um elemento pelo id
+            //var inputElement = document.getElementById('idNome');
+            //console.log(inputElement);
+
+            /*obtendo um elemento pela tag, o método getElementsByTagName() ou getElementsByClassName() 
+            /*retornam um vetor contendo N elementos com a tag/classe informada no parâmetro*/
+            //var inputElement = document.getElementsByTagName("input");
+            //console.log(inputElement); //html Collection
+            //console.log(inputElement[0]);
+            //console.log(inputElement[1]);
+
+            //também pode ser usado para obter um único elemento de um pos N
+            //var inputElement = document.getElementsByTagName('input')[0];
+            //console.log(inputElement);
+
+            /*QuerySelector, permite caminhar na DOM em busca de um elemento de várias formas
+            sintaxe do parâmetro: 'classe#id'  ||  'classe' || 'classe[atributo=nome]'
+            O QuerySelectorAll permite retornar coleções*/             
+            var inputElement = document.querySelector('div#app input#idNome2');
+            console.log(inputElement);
+            var inputElement = document.querySelector('div#app input[name=nome2]');
+            console.log(inputElement);
+
+            var botao = document.querySelector('div#app button');
+            var input = document.querySelector('div#app input[name=nome]');
+            
+            botao.onclick = function(){
+                alert(input.value);
+            }
+
+
+        </script>
+    </body>
+</hmtl>

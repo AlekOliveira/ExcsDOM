@@ -1,0 +1,21 @@
+<html>
+<head>
+</head>
+<body>
+    <button id="btInserir">Inserir</button>
+    <input type="text" id="entrada">
+    <ul id='lista'></ul>
+
+    <script>
+        document.getElementById('btInserir').onclick = function () {
+            let lista = document.getElementById('lista');
+            var texto = document.getElementById('entrada').value;
+
+            let newItem = document.createElement('li');
+            newItem.appendChild(document.createTextNode(texto));
+            lista.appendChild(newItem);
+            document.getElementById('entrada').value="";
+        }
+    </script>
+</body>
+</html>

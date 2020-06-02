@@ -1,0 +1,49 @@
+<html>
+    <head>
+    </head>
+    <body>
+
+        <button id = 'bt'>Gerar Quadrado</button>
+        <div id = 'quadrados'></div>        
+
+        <script>
+            var botao = document.getElementById('bt');
+            console.log(botao);
+
+            function getRandomColor() {
+                    var letters = "0123456789ABCDEF";
+                    var color = "#";
+                    for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    return color; 
+            }
+
+            function a()
+            {
+                this.style.backgroundColor = getRandomColor();
+            }
+
+            botao.onclick = function()
+            {
+                //cria um quadrado vermelho
+                var newQuadrado = document.createElement('div');
+                newQuadrado.style.width = 100;
+                newQuadrado.style.height = 100;
+                newQuadrado.style.backgroundColor = '#f00';
+                
+                //define um evento para o elemento
+                newQuadrado.onclick = function(){
+                    newQuadrado.style.backgroundColor = getRandomColor();
+                } 
+                //ou              
+                //newQuadrado.onclick = function a();
+
+                //obtem a tag na qual contem quadrados e add o filho
+                var quadrados = document.getElementById('quadrados');
+                quadrados.appendChild(newQuadrado);
+            }
+
+        </script>
+    </body>
+</html>

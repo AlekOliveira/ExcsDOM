@@ -1,0 +1,21 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <ul id = 'lista'></ul>
+        
+        <script>
+            var nomes = ["Alek","Enrick","Lediscley"];
+            lista = document.getElementById('lista');
+            
+            console.log(lista);
+            for(var nome of nomes)
+            {
+                var newItem = document.createElement('li');
+                newItem.appendChild(document.createTextNode(nome)); //add um texto dentro da tag <li>
+                lista.appendChild(newItem);               
+            }
+
+        </script>
+    </body>
+</html>
